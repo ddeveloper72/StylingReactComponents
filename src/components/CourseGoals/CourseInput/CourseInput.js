@@ -6,6 +6,9 @@ import './CourseInput.css';
 const CourseInput = props => {
   const [enteredValue, setEnteredValue] = useState('');
 
+  // use state to assume the state of the form is valid
+  const [isValid, setIsValid] = useState(true);
+
   const goalInputChangeHandler = event => {
     setEnteredValue(event.target.value);
   };
