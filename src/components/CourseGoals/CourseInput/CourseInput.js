@@ -17,6 +17,8 @@ const CourseInput = props => {
     event.preventDefault();
     // Check if whitespace or nothing has been entered
     if (enteredValue.trim().length === 0) {
+      // if the test for the entered value is true
+      setIsValid(false);
       return;
     }
     props.onAddGoal(enteredValue);
