@@ -25,3 +25,5 @@ yarn-error.log*
 # ide editor
 .vscode
 
+package-lock.json
+.eslintcache
