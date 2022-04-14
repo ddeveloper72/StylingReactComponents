@@ -2,39 +2,39 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import Button from '../../UI/Button/Button';
-// import './CourseInput.css';
+import Styles from './CourseInput.module.css';
 
 // added new const for formControl using styled-components
 // dynamically update css classes using props
-const FormControl = styled.div`
+// const FormControl = styled.div`
 
-margin: 0.5rem 0;
+// margin: 0.5rem 0;
 
 
-& label {
-  font-weight: bold;
-  display: block;
-  margin-bottom: 0.5rem;
-  color: ${props => (props.invalid ? 'red' : '#000') };
-}
+// & label {
+//   font-weight: bold;
+//   display: block;
+//   margin-bottom: 0.5rem;
+//   color: ${props => (props.invalid ? 'red' : '#000') };
+// }
 
-& input {
-  display: block;
-  width: 100%;
-  border: 1px solid ${props => (props.invalid ? 'red' : '#ccc')};
-  background: ${props => (props.invalid ? '#f1b5b5' : 'transparent')};
-  font: inherit;
-  line-height: 1.5rem;
-  padding: 0 0.25rem;
-}
+// & input {
+//   display: block;
+//   width: 100%;
+//   border: 1px solid ${props => (props.invalid ? 'red' : '#ccc')};
+//   background: ${props => (props.invalid ? '#f1b5b5' : 'transparent')};
+//   font: inherit;
+//   line-height: 1.5rem;
+//   padding: 0 0.25rem;
+// }
 
-&input:focus {
-  outline: none;
-  background: #fad0ec;
-  border-color: #8b005d;
-}
+// &input:focus {
+//   outline: none;
+//   background: #fad0ec;
+//   border-color: #8b005d;
+// }
 
-`;
+// `;
 
 const CourseInput = props => {
   const [enteredValue, setEnteredValue] = useState('');
@@ -64,11 +64,11 @@ const CourseInput = props => {
 
   return (
     <form onSubmit={formSubmitHandler}>
-      {/* use dynamically added classes to form-control */}
-      <FormControl invalid={!isValid}>
+      {/* import Styles from CSS module and use array method to get string name */}
+      <div className={Styles['form-control']} invalid={!isValid}>
         <label >Course Goal</label>
         <input type="text" onChange={goalInputChangeHandler} />
-      </FormControl>
+      </div>
       <Button type="submit">Add Goal</Button>
     </form>
   );
